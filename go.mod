@@ -1,4 +1,4 @@
-module github.com/lfz97/ActiveDirectory
+module ActiveDirectory
 
 go 1.25.0
 
