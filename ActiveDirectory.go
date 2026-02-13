@@ -1,4 +1,4 @@
-package ad
+package ActiveDirectory
 
 import (
 	"crypto/tls"
