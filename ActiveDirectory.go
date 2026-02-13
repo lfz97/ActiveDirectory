@@ -92,14 +92,18 @@ func (ad_ptr *ActiveDirectory) SearchObject(filter string, searchBaseDn string, 
 	return &resultObjects, nil
 }
 
-func (ad_ptr *ActiveDirectory) Close()  {
+func (ad_ptr *ActiveDirectory) Close() {
 	(*ad_ptr).conn_p.Close()
-	
+
 }
 
-
-
 // 初始化AD连接
+// etc:
+// domain := "example.com"
+// ldapUrl := "ldaps://ad.example.com:636"
+// ldapBindUser := "ldap_user"
+// ldapBindPwd := "ldap_password"
+// ad_ptr, err := ActiveDirectory.Init(domain, ldapUrl, ldapBindUser, ldapBindPwd)
 func Init(domain string, ldapUrl string, samAccountName string, bindPwd string) (*ActiveDirectory, error) {
 
 	AD_ptr := &ActiveDirectory{
